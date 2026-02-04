@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+    background: #000;
+}
+
+body{
+    height: 100vh;
+}
+
+.hero{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("Spirit Desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.title h1{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.title p{
+    font-size: 1.1rem;
+    color: #dddddd;
+    margin-bottom: 40px;
+}
+
+.title img{
+    width: 320px;
+    max-width: 90%;
+    margin-bottom: 10px;
+}
+
+.countdown{
+    display: flex;
+    gap: 20px;
+}
+
+.timebox{
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 25px;
+    border-radius: 10px;
+    min-width: 110px;
+}
+
+.timebox span{
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.timebox small{
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #cccccc;
+}
+
+@media (max-width: 768px){
+
+    .hero{
+        background:
+            linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+            url("Spirit WWM .jpg");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        animation: heroFade 1.4s ease-out forwards;
+    }
+
+    .title h1{
+        font-size: 2.2rem;
+    }
+
+    .countdown{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timebox{
+        min-width: 90px;
+    }
+}
+
+.flip{
+    animation: flip 0.35s ease;
+}
+
+@keyframes flip{
+    from{
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes heroFade{
+    from{
+        opacity: 0;
+        transform: scale(1.08);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
