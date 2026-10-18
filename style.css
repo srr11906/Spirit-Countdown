@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)),
+        url("Spirit Desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #ffffff;
+    padding: clamp(20px, 4vh, 48px) clamp(16px, 3vw, 32px);
+    animation: heroFade 1.2s ease-out forwards;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+    gap: clamp(10px, 2vh, 22px);
+}
+
+.subtitle {
+    font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+    letter-spacing: clamp(3px, 0.8vw, 5px);
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.actor {
+    font-size: clamp(2.8rem, 8.5vw, 4.8rem);
+    font-weight: 900;
+    letter-spacing: clamp(4px, 1.2vw, 8px);
+    text-transform: uppercase;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(231, 2, 47);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    line-height: 1.05;
+}
+
+.title-link {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.title-link:hover {
+    transform: scale(1.03);
+}
+
+.title-link img {
+    width: clamp(240px, 40vw, 380px);
+    max-width: 85vw;
+    max-height: clamp(75px, 15vh, 130px);
+    object-fit: contain;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+}
+
+.tagline {
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+    letter-spacing: 2px;
+    color: rgb(231, 2, 47);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.release-info {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: #ffffff;
+    line-height: 1.35;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.release-info em {
+    display: inline-block;
+    margin-bottom: 2px;
+    color: #ffffff;
+}
+
+.release-info b {
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.countdown {
+    display: flex;
+    gap: clamp(10px, 2.5vw, 20px);
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.timebox {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    padding: clamp(10px, 2vh, 18px) clamp(12px, 2.5vw, 24px);
+    border-radius: 12px;
+    min-width: clamp(76px, 20vw, 125px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timebox:hover {
+    transform: translateY(-2px);
+    border-color: rgb(231, 2, 47);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timebox span {
+    display: block;
+    color: #ffffff;
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.timebox small {
+    display: block;
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: clamp(4px, 0.8vh, 8px);
+}
+
+.flip {
+    animation: flip 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes flip {
+    0% {
+        transform: translateY(-8px) scale(0.96);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)),
+            url("Spirit 2M.jpg");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding: clamp(24px, 4.5vh, 40px) 16px;
+        justify-content: space-between;
+    }
+
+    .title {
+        flex: 1;
+        justify-content: space-evenly;
+        gap: clamp(8px, 1.8vh, 18px);
+        padding-bottom: clamp(12px, 2vh, 20px);
+    }
+
+    .title-link img {
+        width: clamp(240px, 72vw, 340px);
+        max-height: clamp(80px, 15vh, 120px);
+    }
+
+    .countdown {
+        width: 100%;
+        max-width: 420px;
+        gap: clamp(8px, 2.2vw, 12px);
+    }
+
+    .timebox {
+        flex: 1;
+        min-width: 0;
+        max-width: 92px;
+        padding: clamp(10px, 1.8vh, 14px) 4px;
+    }
+
+    .timebox span {
+        font-size: clamp(1.8rem, 6.8vw, 2.4rem);
+    }
+
+    .timebox small {
+        font-size: clamp(0.72rem, 2.3vw, 0.85rem);
+    }
+}
+
+@media (max-height: 600px) {
+    .hero {
+        padding: 8px 12px;
+        justify-content: space-evenly;
+    }
+
+    .title {
+        flex: initial;
+        gap: 4px;
+    }
+
+    .title-link img {
+        max-height: 10vh;
+    }
+
+    .timebox {
+        padding: 4px 6px;
+    }
+
+    .timebox span {
+        font-size: 1.4rem;
+    }
+}
