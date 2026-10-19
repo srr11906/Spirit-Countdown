@@ -31,7 +31,7 @@ html, body {
     justify-content: space-evenly;
     text-align: center;
     color: #ffffff;
-    padding: clamp(20px, 4vh, 48px) clamp(16px, 3vw, 32px);
+    padding: clamp(14px, 3vh, 36px) clamp(16px, 3vw, 32px);
     animation: heroFade 1.2s ease-out forwards;
 }
 
@@ -42,7 +42,7 @@ html, body {
     justify-content: center;
     max-width: 900px;
     width: 100%;
-    gap: clamp(10px, 2vh, 22px);
+    gap: clamp(6px, 1.5vh, 16px);
 }
 
 .subtitle {
@@ -78,7 +78,7 @@ html, body {
 .title-link img {
     width: clamp(240px, 40vw, 380px);
     max-width: 85vw;
-    max-height: clamp(75px, 15vh, 130px);
+    max-height: clamp(70px, 14vh, 120px);
     object-fit: contain;
     filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
 }
@@ -123,7 +123,7 @@ html, body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    padding: clamp(10px, 2vh, 18px) clamp(12px, 2.5vw, 24px);
+    padding: clamp(8px, 1.6vh, 14px) clamp(12px, 2.5vw, 24px);
     border-radius: 12px;
     min-width: clamp(76px, 20vw, 125px);
     transition: transform 0.25s ease, border-color 0.25s ease;
@@ -138,7 +138,7 @@ html, body {
 .timebox span {
     display: block;
     color: #ffffff;
-    font-size: clamp(2rem, 5.5vw, 3rem);
+    font-size: clamp(1.9rem, 5.2vw, 2.8rem);
     font-weight: 800;
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
@@ -147,12 +147,272 @@ html, body {
 
 .timebox small {
     display: block;
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    font-size: clamp(0.78rem, 1.6vw, 0.92rem);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 600;
     color: #ffffff;
-    margin-top: clamp(4px, 0.8vh, 8px);
+    margin-top: clamp(3px, 0.6vh, 6px);
+}
+
+.actions-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(6px, 1.2vh, 10px);
+    width: 100%;
+    max-width: clamp(340px, 42vw, 520px);
+}
+
+.sub-actions {
+    display: flex;
+    gap: clamp(8px, 1.8vw, 14px);
+    width: 100%;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: clamp(6px, 1.1vh, 9px) clamp(14px, 2.5vw, 20px);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: clamp(0.76rem, 1.8vw, 0.86rem);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sub-actions .action-btn {
+    flex: 1;
+}
+
+.play-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: clamp(8px, 1.4vh, 12px) 24px;
+    border-color: rgba(231, 2, 47, 0.55);
+    background: rgba(231, 2, 47, 0.12);
+    font-weight: 700;
+    font-size: clamp(0.82rem, 1.8vw, 0.92rem);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgb(231, 2, 47);
+    background: rgba(231, 2, 47, 0.15);
+}
+
+.action-btn svg {
+    stroke: #ffffff;
+    flex-shrink: 0;
+}
+
+.play-action-btn svg {
+    fill: rgb(231, 2, 47);
+    stroke: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal-box {
+    background: #000000;
+    border: 1px solid rgb(231, 2, 47);
+    border-radius: 14px;
+    padding: 24px;
+    max-width: 320px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.modal-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.modal-box p {
+    font-size: 0.85rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.modal-btn:hover {
+    border-color: rgb(231, 2, 47);
+    background: rgba(231, 2, 47, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.game-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 150;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px;
+}
+
+.game-overlay[hidden] {
+    display: none;
+}
+
+.game-container {
+    background: #000000;
+    border: 1px solid rgb(231, 2, 47);
+    border-radius: 14px;
+    padding: clamp(10px, 2vh, 18px);
+    max-width: 860px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.game-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: clamp(6px, 1.2vh, 12px);
+    padding: 0 4px;
+}
+
+.game-icon-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.game-icon-btn:hover {
+    border-color: rgb(231, 2, 47);
+    background: rgba(231, 2, 47, 0.2);
+}
+
+.canvas-wrapper {
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+#dino-canvas {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 800 / 250;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    touch-action: none;
+}
+
+.game-hint {
+    margin-top: 8px;
+    font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000;
+    border: 1px solid rgb(231, 2, 47);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 200;
+    pointer-events: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+.toast[hidden] {
+    display: none;
 }
 
 .flip {
@@ -189,20 +449,20 @@ html, body {
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
-        padding: clamp(24px, 4.5vh, 40px) 16px;
+        padding: clamp(16px, 3.5vh, 32px) 16px;
         justify-content: space-between;
     }
 
     .title {
         flex: 1;
         justify-content: space-evenly;
-        gap: clamp(8px, 1.8vh, 18px);
-        padding-bottom: clamp(12px, 2vh, 20px);
+        gap: clamp(5px, 1.2vh, 12px);
+        padding-bottom: clamp(6px, 1.2vh, 12px);
     }
 
     .title-link img {
         width: clamp(240px, 72vw, 340px);
-        max-height: clamp(80px, 15vh, 120px);
+        max-height: clamp(75px, 14vh, 115px);
     }
 
     .countdown {
@@ -215,38 +475,73 @@ html, body {
         flex: 1;
         min-width: 0;
         max-width: 92px;
-        padding: clamp(10px, 1.8vh, 14px) 4px;
+        padding: clamp(7px, 1.2vh, 11px) 4px;
     }
 
     .timebox span {
-        font-size: clamp(1.8rem, 6.8vw, 2.4rem);
+        font-size: clamp(1.75rem, 6.5vw, 2.3rem);
     }
 
     .timebox small {
-        font-size: clamp(0.72rem, 2.3vw, 0.85rem);
+        font-size: clamp(0.7rem, 2.2vw, 0.82rem);
+    }
+
+    .actions-wrapper {
+        width: 100%;
+        max-width: 420px;
+        gap: 8px;
+        margin-top: clamp(6px, 1.2vh, 12px);
+    }
+
+    .sub-actions {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .sub-actions .action-btn {
+        flex: 1;
+        justify-content: center;
+        padding: clamp(7px, 1.2vh, 10px) 6px;
+        font-size: clamp(0.7rem, 2.3vw, 0.82rem);
+    }
+
+    .play-action-btn {
+        width: 100%;
+        justify-content: center;
+        padding: clamp(8px, 1.4vh, 11px) 12px;
     }
 }
 
 @media (max-height: 600px) {
     .hero {
-        padding: 8px 12px;
+        padding: 6px 10px;
         justify-content: space-evenly;
     }
 
     .title {
         flex: initial;
-        gap: 4px;
+        gap: 3px;
     }
 
     .title-link img {
-        max-height: 10vh;
+        max-height: 9vh;
     }
 
     .timebox {
-        padding: 4px 6px;
+        padding: 3px 5px;
     }
 
     .timebox span {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .actions-wrapper {
+        margin-top: 3px;
+        gap: 4px;
+    }
+
+    .action-btn {
+        padding: 3px 6px;
+        font-size: 0.7rem;
     }
 }

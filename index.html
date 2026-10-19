@@ -45,9 +45,62 @@
             <small>Seconds</small>
           </div>
         </div>
+        <div class="actions-wrapper">
+          <button id="play-btn" class="action-btn play-action-btn" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Game</span>
+          </button>
+          <div class="sub-actions">
+            <button id="calendar-btn" class="action-btn" type="button">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Add to Calendar</span>
+            </button>
+            <button id="share-btn" class="action-btn" type="button">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
       </section>
     </main>
     <footer></footer>
+    <div id="calendar-modal" class="modal-overlay" hidden>
+      <div class="modal-box">
+        <h3>Add to Calendar</h3>
+        <p>Spirit Movie Release &bull; Oct 29, 2027</p>
+        <div class="modal-buttons">
+          <a id="google-cal" class="modal-btn" target="_blank" rel="noopener">Google Calendar</a>
+          <button id="ical-cal" class="modal-btn" type="button">Apple / iCal</button>
+        </div>
+        <button id="close-modal" class="modal-close" type="button">&times;</button>
+      </div>
+    </div>
+    <div id="game-modal" class="game-overlay" hidden>
+      <div class="game-container">
+        <div class="game-header">
+          <button id="close-game" class="game-icon-btn" type="button" title="Close Game">&times;</button>
+        </div>
+        <div class="canvas-wrapper">
+          <canvas id="dino-canvas" width="800" height="250"></canvas>
+        </div>
+        <div class="game-hint">Press SPACE / UP or Tap to Jump</div>
+      </div>
+    </div>
+    <div id="toast" class="toast" hidden></div>
     <script src="script.js"></script>
+    <script src="game.js"></script>
   </body>
 </html>
